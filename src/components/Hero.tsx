@@ -47,7 +47,7 @@ const Hero = () => {
             <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-500 to-purple-500 p-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto">
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 relative">
               <img
-                src="/images/IMG-20250802-WA0028.jpg"
+                src="images/IMG-20250802-WA0028.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
                 style={{
@@ -66,19 +66,19 @@ const Hero = () => {
         <ScrollAnimationWrapper animationType="fade-up" delay={800}>
         <div className="flex justify-center space-x-6 mb-16">
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:hubertus.alfragisa@binus.ac.id"
             className="p-3 bg-gray-800/50 rounded-full hover:bg-blue-600/20 hover:scale-110 transition-all duration-300 group"
           >
             <Mail size={24} className="text-gray-400 group-hover:text-blue-400" />
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/hubertuskenneth/"
             className="p-3 bg-gray-800/50 rounded-full hover:bg-blue-600/20 hover:scale-110 transition-all duration-300 group"
           >
             <Linkedin size={24} className="text-gray-400 group-hover:text-blue-400" />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/HubertusKenneth"
             className="p-3 bg-gray-800/50 rounded-full hover:bg-purple-600/20 hover:scale-110 transition-all duration-300 group"
           >
             <Github size={24} className="text-gray-400 group-hover:text-purple-400" />

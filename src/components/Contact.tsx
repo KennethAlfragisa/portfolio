@@ -7,7 +7,7 @@ const Contact = () => {
     {
       icon: <Mail className="text-blue-400" size={24} />,
       title: "Email",
-      value: "hubertus.alfragisa@binus.ac.id",
+      value: "Contact me",
       link: "mailto:hubertus.alfragisa@binus.ac.id"
     },
     {
