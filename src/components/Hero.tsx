@@ -23,10 +23,13 @@ const Hero = () => {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <ScrollAnimationWrapper animationType="fade-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent leading-tight">
+          <h1 className="overflow-visible inline-block text-4xl md:text-6xl lg:text-7xl font-bold mb-12 
+            bg-gradient-to-r from-white via-blue-200 to-purple-200 
+            bg-clip-text text-transparent leading-relaxed pb-4">
             Hello, I'm Hubertus Kenneth Alfragisa
           </h1>
         </ScrollAnimationWrapper>
+
         
         <ScrollAnimationWrapper animationType="fade-up" delay={200}>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
