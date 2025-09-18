@@ -47,7 +47,7 @@ const Hero = () => {
             <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-500 to-purple-500 p-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto">
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 relative">
               <img
-                src="images/IMG-20250802-WA0028.jpg"
+                src="/portofollio/images/IMG-20250802-WA0028.jpgimages/IMG-20250802-WA0028.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
                 style={{
