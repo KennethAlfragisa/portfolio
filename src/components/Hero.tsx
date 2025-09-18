@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
-import profileImg from "src/assets/IMG-20250802-WA0028.jpg";
+import profileImg from "../assets/IMG-20250802-WA0028.jpg";
 
 const Hero = () => {
   const scrollToNext = () => {
