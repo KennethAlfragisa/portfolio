@@ -83,10 +83,10 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto">
         <ScrollAnimationWrapper animationType="fade-up">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Skills & Expertise
+          <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            SKILLS
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             A comprehensive overview of my technical and soft skills acquired through education, 
             professional experience, and continuous learning.
