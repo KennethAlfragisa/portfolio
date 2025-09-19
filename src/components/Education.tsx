@@ -10,8 +10,7 @@ const Education = () => {
       duration: "2023 – 2027",
       location: "Tangerang, Banten, Indonesia",
       status: "In Progress",
-      description: "Pursuing comprehensive computer science education with focus on software development, algorithms, and system design.",
-      skills: ["C Programming Language", "Problem Solving", "Data Structures", "Algorithms", "Software Engineering", "Database Management", "Web Development", "Object-Oriented Programming", "Computer Networks", "Software Testing", "Project Management", "Team Collaboration"]
+      description: "Pursuing comprehensive computer science education with focus on software development, algorithms, and system design."
     },
     {
       degree: "High School Diploma",
@@ -19,41 +18,35 @@ const Education = () => {
       duration: "Jul 2020 – Jun 2023",
       location: "Gading Serpong, Tangerang, Indonesia",
       status: "Completed",
-      description: "Completed secondary education with strong foundation in mathematics and sciences, preparing for computer science studies.",
-      skills: ["Mathematics", "Physics", "English", "Critical Thinking", "Research Skills", "Presentation Skills"]
+      description: "Completed secondary education with strong foundation in mathematics and sciences."
     }
   ];
 
   return (
-    <section id="education" className="py-20 px-4">
+    <section id="education" className="py-20 px-4 bg-gray-800/30">
       <div className="max-w-7xl mx-auto">
         <ScrollAnimationWrapper animationType="fade-up">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            EDUCATION
-          </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
-        </div>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              EDUCATION
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+          </div>
         </ScrollAnimationWrapper>
 
         <div className="space-y-8">
           {educationData.map((edu, index) => (
             <ScrollAnimationWrapper key={index} animationType="fade-up" delay={index * 300}>
-            <div className="group">
-              <div className="bg-gradient-to-br from-gray-800/80 to-gray-700/40 p-8 rounded-2xl border border-gray-700/50 backdrop-blur-sm hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-700/40 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="p-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg">
                         <GraduationCap size={24} className="text-blue-400" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                          {edu.degree}
-                        </h3>
-                        <p className="text-lg text-blue-400 font-semibold">
-                          {edu.institution}
-                        </p>
+                        <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
+                        <p className="text-lg text-blue-400 font-semibold">{edu.institution}</p>
                       </div>
                     </div>
 
@@ -80,25 +73,8 @@ const Education = () => {
                   </div>
                 </div>
 
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  {edu.description}
-                </p>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-3">Key Skills & Knowledge</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                    {edu.skills.map((skill, skillIndex) => (
-                      <div
-                        key={skillIndex}
-                        className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-300 px-3 py-2 rounded-lg text-sm text-center hover:from-purple-500/30 hover:to-blue-500/30 transition-all duration-300"
-                      >
-                        {skill}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <p className="text-gray-300 leading-relaxed">{edu.description}</p>
               </div>
-            </div>
             </ScrollAnimationWrapper>
           ))}
         </div>
