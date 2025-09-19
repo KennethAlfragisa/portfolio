@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Code } from 'lucide-react';
 
 interface LoadingScreenProps {
   onLoadingComplete: () => void;
@@ -17,57 +16,40 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           setIsComplete(true);
           setTimeout(() => {
             onLoadingComplete();
-          }, 500);
+          }, 800);
           return 100;
         }
-        return prev + Math.random() * 15;
+        return prev + Math.random() * 12;
       });
-    }, 100);
+    }, 120);
 
     return () => clearInterval(interval);
   }, [onLoadingComplete]);
 
   return (
-    <div className={`fixed inset-0 z-50 bg-gray-900 flex items-center justify-center transition-opacity duration-500 ${
-      isComplete ? 'opacity-0' : 'opacity-100'
+    <div className={`fixed inset-0 z-50 bg-gray-900 flex items-center justify-center transition-all duration-1000 ${
+      isComplete ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
     }`}>
       <div className="text-center">
-        {/* Logo Animation */}
-        <div className="mb-8">
-          <div className="relative">
-            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center animate-pulse">
-              <Code size={32} className="text-white" />
-            </div>
-            <div className="absolute inset-0 w-20 h-20 mx-auto border-4 border-transparent border-t-blue-500 rounded-full animate-spin"></div>
-          </div>
-        </div>
-
-        {/* Loading Text */}
-        <h2 className="text-2xl font-bold text-white mb-4 animate-pulse">
-          Loading Portfolio
+        {/* Simple Loading Text */}
+        <h2 className="text-3xl font-light text-white mb-8 tracking-wide">
+          Loading<span className="animate-pulse">...</span>
         </h2>
 
         {/* Progress Bar */}
-        <div className="w-64 mx-auto mb-4">
-          <div className="w-full bg-gray-700 rounded-full h-2">
+        <div className="w-80 mx-auto mb-6">
+          <div className="w-full bg-gray-800 rounded-full h-1 overflow-hidden">
             <div 
-              className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300 ease-out"
+              className="bg-gradient-to-r from-blue-400 to-purple-400 h-1 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
         </div>
 
-        {/* Progress Text */}
-        <p className="text-gray-400 text-sm">
+        {/* Progress Percentage */}
+        <p className="text-gray-400 text-sm font-light">
           {Math.round(progress)}%
         </p>
-
-        {/* Loading Dots */}
-        <div className="flex justify-center space-x-2 mt-6">
-          <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
-          <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-          <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-        </div>
       </div>
     </div>
   );

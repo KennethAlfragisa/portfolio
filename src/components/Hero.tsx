@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
 import profileImg from "../assets/IMG-20250802-WA0028.jpg";
 
@@ -11,6 +11,15 @@ const Hero = () => {
     }
   };
 
+  const downloadCV = () => {
+    // Create a temporary link element to trigger download
+    const link = document.createElement('a');
+    link.href = '/cv-hubertus-kenneth.pdf'; // You'll need to add your CV file to the public folder
+    link.download = 'CV-Hubertus-Kenneth-Alfragisa.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
       {/* Background gradient */}
@@ -66,8 +75,21 @@ const Hero = () => {
         </div>
         </ScrollAnimationWrapper>
 
+        {/* Download CV Button */}
+        <ScrollAnimationWrapper animationType="fade-up" delay={700}>
+        <div className="flex justify-center mb-8">
+          <button
+            onClick={downloadCV}
+            className="group flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+          >
+            <Download size={20} className="group-hover:animate-bounce" />
+            Download CV
+          </button>
+        </div>
+        </ScrollAnimationWrapper>
+
         {/* Social links */}
-        <ScrollAnimationWrapper animationType="fade-up" delay={800}>
+        <ScrollAnimationWrapper animationType="fade-up" delay={900}>
         <div className="flex justify-center space-x-6 mb-16">
           <a
             href="mailto:hubertus.alfragisa@binus.ac.id"
@@ -91,7 +113,7 @@ const Hero = () => {
         </ScrollAnimationWrapper>
 
         {/* Scroll indicator */}
-        <ScrollAnimationWrapper animationType="fade-up" delay={1000}>
+        <ScrollAnimationWrapper animationType="fade-up" delay={1100}>
           <button
             onClick={scrollToNext}
             className="animate-bounce cursor-pointer hover:scale-110 transition-transform duration-300 mt-12"
