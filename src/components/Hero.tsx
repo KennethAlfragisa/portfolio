@@ -86,7 +86,7 @@ const Hero = () => {
                 bg-gray-900/70 backdrop-blur-sm outline-animated"
             >
               <Download size={20} className="group-hover:animate-bounce" />
-              <span className="shimmer">Download CV</span>
+              <span className="shimmer">Download CV (Not Updated)</span>
             </button>
           </div>
         </ScrollAnimationWrapper>
