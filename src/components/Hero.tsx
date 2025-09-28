@@ -44,7 +44,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
           {/* Text Content */}
-          <div className="flex flex-col text-left md:ml-[-200px]">
+          <div className="flex flex-col text-left md:ml-[-140px]">
             <ScrollAnimationWrapper animationType="fade-up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-10 shiny-text leading-[1.2] pb-4">
                 Hello, I'm Hubertus Kenneth Alfragisa
@@ -143,7 +143,7 @@ const Hero = () => {
         <div className="flex justify-center opacity-0 animate-fadeInDelay">
           <button
             onClick={scrollToNext}
-            className="animate-bounce cursor-pointer hover:scale-110 transition-transform duration-300 mt-12"
+            className="animate-bounce cursor-pointer hover:scale-110 transition-transform duration-300 mt-90"
           >
             <ArrowDown size={32} className="text-gray-400 hover:text-white" />
           </button>

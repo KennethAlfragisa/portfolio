@@ -1,6 +1,13 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { Code, TestTube, Megaphone, Calendar, Users, Gamepad2, FileCode, Database, LayoutGrid as Layout, Server, Globe, Layers, Boxes, Braces, GitBranch, PencilRuler, Coffee } from "lucide-react";
+import {
+  Code,
+  TestTube,
+  Megaphone,
+  Calendar,
+  Users,
+  Gamepad2,
+} from "lucide-react";
 
 // Skill kategori (deskripsi singkat)
 const skillCategories = [
@@ -49,8 +56,6 @@ const individualSkills = [
   { name: "Vue.js", description: "Progressive JavaScript framework.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" className="w-8 h-8" alt="Vue.js" /> },
   { name: "React.js", description: "Building fast UI components.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" className="w-8 h-8" alt="React" /> },
   { name: "Bootstrap", description: "Responsive CSS framework.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" className="w-8 h-8" alt="Bootstrap" /> },
-
-  // Tambahan skill baru
   { name: "Python", description: "High-level programming for data, AI, and web.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" className="w-8 h-8" alt="Python" /> },
   { name: "Java", description: "Object-oriented programming for robust apps.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" className="w-8 h-8" alt="Java" /> },
   { name: "Figma", description: "UI/UX design and prototyping.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" className="w-8 h-8" alt="Figma" /> },
@@ -80,27 +85,18 @@ const itemVariants: Variants = {
   },
 };
 
-const underlineVariants: Variants = {
-  hidden: { scaleX: 0, opacity: 0 },
-  show: {
-    scaleX: 1,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeInOut" },
-  },
-};
-
 const Skills = () => {
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
-      {/* Title */}
+        {/* Title */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
-          >
+        >
           <h2 className="text-4xl md:text-5xl font-black mb-6 
                         bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600 
                         bg-clip-text text-transparent">
@@ -144,11 +140,21 @@ const Skills = () => {
           ))}
         </motion.div>
 
+        {/* Garis Pemisah */}
+        <motion.div
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="relative w-full h-[2px] mb-16 bg-gradient-to-r 
+                     from-transparent via-blue-400 to-transparent origin-center"
+        />
+
         {/* Individual Skills */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="show" 
+          whileInView="show"
           viewport={{ once: false, amount: 0.2 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
@@ -157,7 +163,9 @@ const Skills = () => {
               key={index}
               variants={itemVariants}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="p-6 rounded-xl bg-gradient-to-br from-gray-800/80 to-gray-700/40 border border-gray-700/50 shadow-md hover:shadow-lg hover:shadow-blue-500/10 transition-all"
+              className="p-6 rounded-xl bg-gradient-to-br from-gray-800/80 to-gray-700/40 
+                         border border-gray-700/50 shadow-md hover:shadow-lg 
+                         hover:shadow-blue-500/10 transition-all"
             >
               <div className="mb-4 inline-flex p-3 bg-gray-700/50 rounded-lg">
                 {skill.icon}

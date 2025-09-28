@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png'; // import logo
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ const Header = () => {
           }
         });
       },
-      { threshold: 0.6 } // 60% visible baru dianggap active
+      { threshold: 0.6 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -39,21 +40,27 @@ const Header = () => {
     { href: '#contact', label: 'Contact' },
   ];
 
-const scrollToSection = (href: string) => {
-  const element = document.querySelector(href);
-  if (element) {
-    const headerOffset = 65; // tinggi header (sesuaikan kalau beda)
-    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - headerOffset;
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      const headerOffset = 65;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
 
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const scrollToTop = () => {
     window.scrollTo({
-      top: offsetPosition,
+      top: 0,
       behavior: "smooth",
     });
-  }
-  setIsMenuOpen(false);
-};
-
+  };
 
   return (
     <header
@@ -63,13 +70,12 @@ const scrollToSection = (href: string) => {
           : 'bg-transparent'
       }`}
     >
-      {/* nav full width tanpa margin auto */}
       <nav className="w-full px-60">
         <div className="flex justify-between items-center py-4">
-          {/* Logo kiri */}
-          <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pl-4">
-            Portfolio
-          </div>
+          {/* Logo bisa diklik */}
+          <button onClick={scrollToTop} className="-ml-10 focus:outline-none">
+            <img src={logo} alt="Logo" className="h-[30px] w-auto" />
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 pr-4">
@@ -86,15 +92,12 @@ const scrollToSection = (href: string) => {
                   }`}
                 >
                   {item.label}
-<span
-  className={`absolute left-0 -bottom-1.5 h-[2px] 
-  bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 ${
-    isActive
-      ? 'w-full'
-      : 'w-0 group-hover:w-full'
-  }`}
-/>
-
+                  <span
+                    className={`absolute left-0 -bottom-1.5 h-[2px] 
+                    bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
                 </button>
               );
             })}
