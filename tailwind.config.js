@@ -42,6 +42,12 @@ export default {
           "0%": { opacity: "1", transform: "translateY(0)" },
           "100%": { opacity: "0", transform: "translateY(6px)" },
         },
+
+        // 👇 keyframes baru untuk garis bawah
+        "growX": {
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 0.8s ease-out forwards",
@@ -52,6 +58,7 @@ export default {
         "typewriter": "typewriter 2s steps(20) infinite alternate",
         "shine": "shine 1.5s ease-in-out",
         "scroll-indicator": "scroll-indicator 2s ease-in-out infinite",
+        "growX": "growX 1s ease-out forwards",
       },
     },
   },

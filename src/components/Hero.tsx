@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
-import profileImg from "../assets/IMG-20250802-WA0028.jpg";
+import profileImg from "../assets/profil.jpg";
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -44,9 +44,9 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
           {/* Text Content */}
-          <div className="flex flex-col text-left">
+          <div className="flex flex-col text-left md:ml-[-200px]">
             <ScrollAnimationWrapper animationType="fade-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 shiny-text leading-snug">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-10 shiny-text leading-[1.2] pb-4">
                 Hello, I'm Hubertus Kenneth Alfragisa
               </h1>
             </ScrollAnimationWrapper>
@@ -111,22 +111,28 @@ const Hero = () => {
 
           {/* Profile Photo */}
           <ScrollAnimationWrapper animationType="scale-up" delay={600}>
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-end md:mr-[-60px]">
               <div className="relative group">
-                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-500 to-purple-500 p-1 bg-gradient-to-r from-blue-500 to-purple-500">
+                <div className="profile-wrapper w-96 h-96 md:w-[28rem] md:h-[28rem] 
+                                rounded-full overflow-hidden border-4 
+                                border-gradient-to-r from-blue-500 to-purple-500 p-1 
+                                bg-gradient-to-r from-blue-500 to-purple-500 
+                                transition-transform duration-500">
                   <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 relative">
                     <img
                       src={profileImg}
                       alt="Profile"
                       className="w-full h-full object-cover"
                       style={{
-                        transform: 'scale(1.15)',
-                        objectPosition: 'center',
+                        objectPosition: "center",
+                        transform: "scale(1.9)", 
                       }}
                     />
                   </div>
                 </div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           </ScrollAnimationWrapper>
@@ -144,7 +150,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Custom styles (tidak diubah, sama dengan versi lama) */}
+      {/* Custom styles */}
       <style>{`
         @keyframes fadeInDelay {
           0% { opacity: 0; transform: translateY(20px); }
@@ -214,6 +220,19 @@ const Hero = () => {
           background-clip: text;
           animation: shimmerMove 3s ease-in-out infinite;
         }
+        @keyframes zoomPulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+
+        /* Pulse aktif di wrapper & overlay agar sinkron */
+        .group:hover .profile-wrapper,
+        .group:hover .overlay {
+          animation: zoomPulse 1.5s ease-in-out infinite;
+        }
+
+
+
       `}</style>
     </section>
   );

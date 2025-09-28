@@ -71,15 +71,6 @@ const itemVariants: Variants = {
   },
 };
 
-const underlineVariants: Variants = {
-  hidden: { scaleX: 0, opacity: 0 },
-  show: {
-    scaleX: 1,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeInOut" },
-  },
-};
-
 const Projects = () => {
   const [selected, setSelected] = useState<any>(null);
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -99,32 +90,24 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 bg-gray-900">
+    <section id="projects" className="py-20 px-4 bg-gray-800/30">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 70, damping: 15 }}
           className="text-center mb-16"
         >
-          <h2
-            className="text-5xl md:text-6xl font-extrabold mb-4 
-                       bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600 
-                       bg-clip-text text-transparent"
-          >
+          <h2 className="text-4xl md:text-5xl font-black mb-6 
+                        bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600 
+                        bg-clip-text text-transparent">
             PROJECTS
           </h2>
-
-          <motion.div
-            variants={underlineVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false }}
-            className="w-32 h-1 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 
-                      mx-auto mb-8 origin-left"
-          />
+          
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 
+                          mx-auto mb-8 origin-left scale-x-0 animate-growX"></div>
         </motion.div>
 
         {/* Projects Grid */}
@@ -139,9 +122,6 @@ const Projects = () => {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              whileInView="show"
-              initial="hidden"
-              viewport={{ once: false, amount: 0.2 }}
               className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-700"
             >
               {/* Image + Hover overlay */}

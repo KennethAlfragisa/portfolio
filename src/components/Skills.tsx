@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import {Code, TestTube, Megaphone, Calendar, Users, Gamepad2, FileCode, Database, Layout, Server, Globe, Layers, Boxes, Braces, GitBranch, PencilRuler, Coffee,} 
-from "lucide-react";
+import { Code, TestTube, Megaphone, Calendar, Users, Gamepad2, FileCode, Database, LayoutGrid as Layout, Server, Globe, Layers, Boxes, Braces, GitBranch, PencilRuler, Coffee } from "lucide-react";
 
 // Skill kategori (deskripsi singkat)
 const skillCategories = [
@@ -41,21 +40,21 @@ const skillCategories = [
 
 // Skill individual
 const individualSkills = [
-  { name: "C", description: "Foundational programming language.", icon: <Code className="w-8 h-8 text-blue-400" /> },
-  { name: "HTML & CSS", description: "Building clean and functional websites.", icon: <Layout className="w-8 h-8 text-orange-400" /> },
-  { name: "JavaScript", description: "Interactive and dynamic web features.", icon: <Braces className="w-8 h-8 text-yellow-400" /> },
-  { name: "PHP", description: "Server-side scripting for web apps.", icon: <Server className="w-8 h-8 text-purple-400" /> },
-  { name: "SQL", description: "Managing and querying databases.", icon: <Database className="w-8 h-8 text-green-400" /> },
-  { name: "Laravel", description: "PHP framework for modern apps.", icon: <FileCode className="w-8 h-8 text-red-400" /> },
-  { name: "Vue.js", description: "Progressive JavaScript framework.", icon: <Globe className="w-8 h-8 text-emerald-400" /> },
-  { name: "React.js", description: "Building fast UI components.", icon: <Boxes className="w-8 h-8 text-cyan-400" /> },
-  { name: "Bootstrap", description: "Responsive CSS framework.", icon: <Layers className="w-8 h-8 text-pink-400" /> },
+  { name: "C", description: "Foundational programming language.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" className="w-8 h-8" alt="C" /> },
+  { name: "HTML & CSS", description: "Building clean and functional websites.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" className="w-8 h-8" alt="HTML" /> },
+  { name: "JavaScript", description: "Interactive and dynamic web features.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" className="w-8 h-8" alt="JavaScript" /> },
+  { name: "PHP", description: "Server-side scripting for web apps.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" className="w-8 h-8" alt="PHP" /> },
+  { name: "SQL", description: "Managing and querying databases.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" className="w-8 h-8" alt="SQL" /> },
+  { name: "Laravel", description: "PHP framework for modern apps.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" className="w-8 h-8" alt="Laravel" /> },
+  { name: "Vue.js", description: "Progressive JavaScript framework.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" className="w-8 h-8" alt="Vue.js" /> },
+  { name: "React.js", description: "Building fast UI components.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" className="w-8 h-8" alt="React" /> },
+  { name: "Bootstrap", description: "Responsive CSS framework.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" className="w-8 h-8" alt="Bootstrap" /> },
 
   // Tambahan skill baru
-  { name: "Python", description: "High-level programming for data, AI, and web.", icon: <Braces className="w-8 h-8 text-green-500" /> },
-  { name: "Java", description: "Object-oriented programming for robust apps.", icon: <Coffee className="w-8 h-8 text-red-500" /> },
-  { name: "Figma", description: "UI/UX design and prototyping.", icon: <PencilRuler className="w-8 h-8 text-purple-400" /> },
-  { name: "GitHub", description: "Version control and collaboration platform.", icon: <GitBranch className="w-8 h-8 text-gray-300" /> },
+  { name: "Python", description: "High-level programming for data, AI, and web.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" className="w-8 h-8" alt="Python" /> },
+  { name: "Java", description: "Object-oriented programming for robust apps.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" className="w-8 h-8" alt="Java" /> },
+  { name: "Figma", description: "UI/UX design and prototyping.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" className="w-8 h-8" alt="Figma" /> },
+  { name: "GitHub", description: "Version control and collaboration platform.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" className="w-8 h-8" alt="GitHub" /> },
 ];
 
 // Variants
@@ -95,39 +94,35 @@ const Skills = () => {
     <section id="skills" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
       {/* Title */}
-      <motion.div
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ type: "spring", stiffness: 70, damping: 15 }}
-        className="text-center mb-16"
-      >
-        {/* Tulisan SKILLS dengan gradasi biru */}
-        <h2 className="text-5xl md:text-7xl font-black mb-6 
-                      bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600 
-                      bg-clip-text text-transparent">
-          SKILLS
-        </h2>
-
-        {/* Garis bawah gradasi biru berbeda */}
         <motion.div
-          variants={underlineVariants}
+          variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false }}
-          className="w-32 h-1 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 
-                    mx-auto mb-8 origin-left"
-        />
-      </motion.div>
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-center mb-16"
+          >
+          <h2 className="text-4xl md:text-5xl font-black mb-6 
+                        bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600 
+                        bg-clip-text text-transparent">
+            SKILLS
+          </h2>
 
-
-
+          {/* GrowX underline */}
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+            className="w-32 h-1 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 
+                      mx-auto mb-8 origin-left"
+          />
+        </motion.div>
 
         {/* Category Skills */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="show"
+          whileInView="show" 
           viewport={{ once: false, amount: 0.3 }}
           className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-20"
         >
@@ -135,6 +130,7 @@ const Skills = () => {
             <motion.div
               key={index}
               variants={itemVariants}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
               className="bg-gradient-to-br from-gray-800/80 to-gray-700/40 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-blue-500/10 transition-all"
             >
               <div className="flex items-center gap-3 mb-4">
@@ -152,7 +148,7 @@ const Skills = () => {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="show"
+          whileInView="show" 
           viewport={{ once: false, amount: 0.2 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
@@ -160,6 +156,7 @@ const Skills = () => {
             <motion.div
               key={index}
               variants={itemVariants}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
               className="p-6 rounded-xl bg-gradient-to-br from-gray-800/80 to-gray-700/40 border border-gray-700/50 shadow-md hover:shadow-lg hover:shadow-blue-500/10 transition-all"
             >
               <div className="mb-4 inline-flex p-3 bg-gray-700/50 rounded-lg">

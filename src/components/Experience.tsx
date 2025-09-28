@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, MapPin, Building } from 'lucide-react';
+import { motion } from 'framer-motion';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
 
 const Experience = () => {
@@ -39,10 +40,18 @@ const Experience = () => {
       <div className="max-w-7xl mx-auto">
         <ScrollAnimationWrapper animationType="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600 bg-clip-text text-transparent">
               EXPERIENCE
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+            {/* GrowX underline */}
+            <motion.div
+              initial={{ scaleX: 0, opacity: 0 }}
+              whileInView={{ scaleX: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeInOut" }}
+              className="w-32 h-1 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 
+                         mx-auto mb-8 origin-left"
+            />
           </div>
         </ScrollAnimationWrapper>
 
