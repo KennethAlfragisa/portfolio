@@ -12,7 +12,7 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
       
       // Check if we're at the top of the page
-      if (window.scrollY < 100) {
+      if (window.scrollY < 200) {
         setActiveSection('');
         return;
       }
@@ -23,7 +23,7 @@ const Header = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && window.scrollY > 100) {
+          if (entry.isIntersecting && window.scrollY > 200) {
             setActiveSection(`#${entry.target.id}`);
           }
         });
@@ -79,12 +79,12 @@ const Header = () => {
       <nav className="w-full px-4 sm:px-6 lg:px-8 xl:px-60">
         <div className="flex justify-between items-center py-4">
           {/* Logo bisa diklik */}
-          <button onClick={scrollToTop} className="xl:-ml-10 focus:outline-none">
+          <button onClick={scrollToTop} className="focus:outline-none">
             <img src={logo} alt="Logo" className="h-[30px] w-auto" />
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex space-x-4 xl:space-x-8 xl:pr-4">
+          <div className="hidden lg:flex space-x-4 xl:space-x-8">
             {navItems.map((item) => {
               const isActive = activeSection === item.href;
               return (

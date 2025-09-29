@@ -93,7 +93,7 @@ const Skills = () => {
         <motion.div
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ 
             type: "spring", 
             stiffness: 100, 
@@ -103,7 +103,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-6 
-                        bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 
+                        bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 
                         bg-clip-text text-transparent">
             SKILLS
           </h2>
@@ -113,11 +113,18 @@ const Skills = () => {
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+            transition={{ duration: 1.0, ease: "easeInOut", delay: 0.2 }}
             className="relative mx-auto mb-8"
           >
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 mx-auto origin-left rounded-full" />
-            <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-32 h-3 bg-gradient-to-r from-blue-600/20 via-blue-500/30 to-blue-700/20 blur-sm rounded-full" />
+            <div className="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 mx-auto origin-center rounded-full shadow-lg shadow-blue-500/50" />
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-40 h-5 bg-gradient-to-r from-blue-500/30 via-blue-600/40 to-blue-800/30 blur-md rounded-full" />
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full shadow-lg shadow-blue-400/80"
+            />
           </motion.div>
         </motion.div>
 
@@ -151,7 +158,7 @@ const Skills = () => {
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="relative w-full h-[2px] mb-16 bg-gradient-to-r 
                      from-transparent via-blue-400 to-transparent origin-center"

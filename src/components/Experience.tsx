@@ -1,7 +1,6 @@
 import React from 'react';
-import { Calendar, MapPin, Building } from 'lucide-react';
+import { Calendar, MapPin, Building, Code, Users, TestTube, Megaphone } from 'lucide-react';
 import { motion } from 'framer-motion';
-import ScrollAnimationWrapper from './ScrollAnimationWrapper';
 
 const Experience = () => {
   const experiences = [
@@ -11,7 +10,7 @@ const Experience = () => {
       duration: "Mar 2025 – Present",
       location: "Kota Tangerang, Banten, Indonesia",
       description: "Leading media and communications initiatives for the university's ecumenical fellowship organization.",
-      skills: ["Communication", "Content Creation", "Social Media Management", "Event Promotion"]
+      skills: ["Communication", "Content Creation", "Social Media Management", "Event Promotion", "Public Relations", "Digital Marketing"]
     },
     {
       title: "Streaming Manager",
@@ -19,7 +18,7 @@ const Experience = () => {
       duration: "Mar 2025 – Present",
       location: "Remote",
       description: "Managing streaming operations and content creation for the university's gaming organization.",
-      skills: ["Streaming Management", "Content Strategy", "Community Building", "Gaming Industry"]
+      skills: ["Streaming Management", "Content Strategy", "Community Building", "Gaming Industry", "OBS Studio", "Video Editing", "Live Production"]
     },
     {
       title: "Quality Assurance Intern",
@@ -27,7 +26,7 @@ const Experience = () => {
       duration: "Jul 2025 – Sep 2025",
       location: "Tangerang, Banten, Indonesia",
       description: "Gained hands-on experience in quality assurance processes and testing methodologies.",
-      skills: ["Software Testing", "QA Processes", "Bug Reporting", "Test Documentation", "Quality Standards"]
+      skills: ["Software Testing", "QA Processes", "Bug Reporting", "Test Documentation", "Quality Standards", "Manual Testing", "Test Case Design", "Regression Testing"]
     },
     {
       title: "Event Coordinator",
@@ -35,12 +34,12 @@ const Experience = () => {
       duration: "Aug 2024 – Oct 2024",
       location: "Kota Tangerang, Banten, Indonesia",
       description: "Coordinated and managed various events, ensuring smooth execution and client satisfaction.",
-      skills: ["Event Planning", "Project Management", "Vendor Coordination", "Client Relations", "Team Leadership"]
+      skills: ["Event Planning", "Project Management", "Vendor Coordination", "Client Relations", "Team Leadership", "Budget Management", "Timeline Management", "Problem Solving"]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 bg-gray-800/30">
+    <section id="experience" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
@@ -54,7 +53,7 @@ const Experience = () => {
           }}
           className="text-center mb-16"
         >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 bg-clip-text text-transparent">
               EXPERIENCE
             </h2>
             {/* Elegant animated underline */}
@@ -62,11 +61,18 @@ const Experience = () => {
               initial={{ scaleX: 0, opacity: 0 }}
               whileInView={{ scaleX: 1, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+              transition={{ duration: 1.0, ease: "easeInOut", delay: 0.2 }}
               className="relative mx-auto mb-8"
             >
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 mx-auto origin-left rounded-full" />
-              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-32 h-3 bg-gradient-to-r from-blue-600/20 via-blue-500/30 to-blue-700/20 blur-sm rounded-full" />
+              <div className="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 mx-auto origin-center rounded-full shadow-lg shadow-blue-500/50" />
+              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-40 h-5 bg-gradient-to-r from-blue-500/30 via-blue-600/40 to-blue-800/30 blur-md rounded-full" />
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full shadow-lg shadow-blue-400/80"
+              />
             </motion.div>
         </motion.div>
 
