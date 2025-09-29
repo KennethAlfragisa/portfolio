@@ -5,11 +5,17 @@ import logo from '../assets/logo.png'; // import logo
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('#about');
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Check if we're at the top of the page
+      if (window.scrollY < 100) {
+        setActiveSection('');
+        return;
+      }
     };
     window.addEventListener('scroll', handleScroll);
 
@@ -17,12 +23,12 @@ const Header = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && window.scrollY > 100) {
             setActiveSection(`#${entry.target.id}`);
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.3 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -70,15 +76,15 @@ const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="w-full px-60">
+      <nav className="w-full px-4 sm:px-6 lg:px-8 xl:px-60">
         <div className="flex justify-between items-center py-4">
           {/* Logo bisa diklik */}
-          <button onClick={scrollToTop} className="-ml-10 focus:outline-none">
+          <button onClick={scrollToTop} className="xl:-ml-10 focus:outline-none">
             <img src={logo} alt="Logo" className="h-[30px] w-auto" />
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 pr-4">
+          <div className="hidden lg:flex space-x-4 xl:space-x-8 xl:pr-4">
             {navItems.map((item) => {
               const isActive = activeSection === item.href;
               return (
@@ -105,7 +111,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-white hover:text-blue-400 transition-colors pr-4"
+            className="lg:hidden text-white hover:text-blue-400 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -114,7 +120,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-gray-800/95 backdrop-blur-sm rounded-lg mt-2 py-4">
+          <div className="lg:hidden bg-gray-800/95 backdrop-blur-sm rounded-lg mt-2 py-4 mx-4">
             {navItems.map((item) => (
               <button
                 key={item.href}

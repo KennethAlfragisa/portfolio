@@ -10,54 +10,75 @@ const Experience = () => {
       company: "Persekutuan Oikoumene BINUS University",
       duration: "Mar 2025 – Present",
       location: "Kota Tangerang, Banten, Indonesia",
-      description: "Leading media and communications initiatives for the university's ecumenical fellowship organization."
+      description: "Leading media and communications initiatives for the university's ecumenical fellowship organization.",
+      skills: ["Communication", "Content Creation", "Social Media Management", "Event Promotion"]
     },
     {
       title: "Streaming Manager",
       company: "Binusian Gaming",
       duration: "Mar 2025 – Present",
       location: "Remote",
-      description: "Managing streaming operations and content creation for the university's gaming organization."
+      description: "Managing streaming operations and content creation for the university's gaming organization.",
+      skills: ["Streaming Management", "Content Strategy", "Community Building", "Gaming Industry"]
     },
     {
       title: "Quality Assurance Intern",
       company: "PT Sinergi Prakarsa Utama (Sinergi)",
       duration: "Jul 2025 – Sep 2025",
       location: "Tangerang, Banten, Indonesia",
-      description: "Gained hands-on experience in quality assurance processes and testing methodologies."
+      description: "Gained hands-on experience in quality assurance processes and testing methodologies.",
+      skills: ["Software Testing", "QA Processes", "Bug Reporting", "Test Documentation", "Quality Standards"]
     },
     {
       title: "Event Coordinator",
       company: "Alam Sutera Royale",
       duration: "Aug 2024 – Oct 2024",
       location: "Kota Tangerang, Banten, Indonesia",
-      description: "Coordinated and managed various events, ensuring smooth execution and client satisfaction."
+      description: "Coordinated and managed various events, ensuring smooth execution and client satisfaction.",
+      skills: ["Event Planning", "Project Management", "Vendor Coordination", "Client Relations", "Team Leadership"]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 px-4">
+    <section id="experience" className="py-20 px-4 bg-gray-800/30">
       <div className="max-w-7xl mx-auto">
-        <ScrollAnimationWrapper animationType="fade-up">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600 bg-clip-text text-transparent">
+        <motion.div
+          initial={{ opacity: 0, y: -30, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 100, 
+            damping: 15,
+            duration: 0.8 
+          }}
+          className="text-center mb-16"
+        >
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
               EXPERIENCE
             </h2>
-            {/* GrowX underline */}
+            {/* Elegant animated underline */}
             <motion.div
               initial={{ scaleX: 0, opacity: 0 }}
               whileInView={{ scaleX: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-              className="w-32 h-1 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 
-                         mx-auto mb-8 origin-left"
-            />
-          </div>
-        </ScrollAnimationWrapper>
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+              className="relative mx-auto mb-8"
+            >
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 mx-auto origin-left rounded-full" />
+              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-32 h-3 bg-gradient-to-r from-blue-600/20 via-blue-500/30 to-blue-700/20 blur-sm rounded-full" />
+            </motion.div>
+        </motion.div>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <ScrollAnimationWrapper key={index} animationType="fade-up" delay={index * 200}>
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
               <div className="bg-gradient-to-br from-gray-800/80 to-gray-700/40 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
@@ -81,8 +102,23 @@ const Experience = () => {
                 </div>
 
                 <p className="text-gray-300 leading-relaxed">{exp.description}</p>
+                
+                {/* Skills */}
+                <div className="mt-4">
+                  <h4 className="text-sm font-semibold text-blue-400 mb-2">Skills & Technologies:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </ScrollAnimationWrapper>
+            </motion.div>
           ))}
         </div>
       </div>

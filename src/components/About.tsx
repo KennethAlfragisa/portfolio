@@ -1,5 +1,6 @@
 import React from "react";
 import { Code, Gamepad2, Users, Trophy } from "lucide-react";
+import { motion } from "framer-motion";
 import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
 
 const About = () => {
@@ -33,24 +34,46 @@ const About = () => {
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
-{/* Title */}
-<div className="text-center mb-16">
-  <ScrollAnimationWrapper animationType="fade-up">
-    <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 bg-clip-text text-transparent">
-      ABOUT ME
-    </h2>
-  </ScrollAnimationWrapper>
+        {/* Title */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: -30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 100, 
+              damping: 15,
+              duration: 0.8 
+            }}
+          >
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
+              ABOUT ME
+            </h2>
+          </motion.div>
 
-  {/* Animated underline */}
-  <ScrollAnimationWrapper animationType="scale-up" delay={200}>
-    <div className="w-32 h-1 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 mx-auto mb-8 origin-left transform scale-x-0 animate-[growX_1s_ease-out_forwards]" />
-  </ScrollAnimationWrapper>
-</div>
+          {/* Elegant animated underline */}
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+            className="relative mx-auto mb-8"
+          >
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 mx-auto origin-left rounded-full" />
+            <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-32 h-3 bg-gradient-to-r from-blue-600/20 via-blue-500/30 to-blue-700/20 blur-sm rounded-full" />
+          </motion.div>
+        </div>
 
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left text */}
-          <ScrollAnimationWrapper animationType="fade-right" delay={200}>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
                 I'm a passionate Computer Science student at BINUS University,
@@ -70,20 +93,27 @@ const About = () => {
                 gaming community through my role at Binusian Gaming.
               </p>
             </div>
-          </ScrollAnimationWrapper>
+          </motion.div>
 
           {/* Right card */}
-          <ScrollAnimationWrapper animationType="fade-left" delay={400}>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-700/30 p-8 rounded-2xl backdrop-blur-sm border border-gray-700/50">
               <h3 className="text-2xl font-semibold mb-6 text-center">
                 Key Strengths
               </h3>
               <div className="grid grid-cols-2 gap-6">
                 {highlights.map((item, index) => (
-                  <ScrollAnimationWrapper
+                  <motion.div
                     key={index}
-                    animationType="scale-up"
-                    delay={600 + index * 100}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   >
                     <div className="text-center group">
                       <div className="flex justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -96,11 +126,11 @@ const About = () => {
                         {item.description}
                       </p>
                     </div>
-                  </ScrollAnimationWrapper>
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </ScrollAnimationWrapper>
+          </motion.div>
         </div>
       </div>
     </section>

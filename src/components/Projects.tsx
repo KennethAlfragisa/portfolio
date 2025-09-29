@@ -101,13 +101,21 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-6 
-                        bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600 
+                        bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 
                         bg-clip-text text-transparent">
             PROJECTS
           </h2>
           
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-300 via-sky-400 to-blue-600 
-                          mx-auto mb-8 origin-left scale-x-0 animate-growX"></div>
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+            className="relative mx-auto mb-8"
+          >
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 mx-auto origin-left rounded-full" />
+            <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-32 h-3 bg-gradient-to-r from-blue-600/20 via-blue-500/30 to-blue-700/20 blur-sm rounded-full" />
+          </motion.div>
         </motion.div>
 
         {/* Projects Grid */}
