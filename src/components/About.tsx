@@ -39,14 +39,14 @@ const About = () => {
             initial={{ opacity: 0, y: -30, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 100, 
+            transition={{
+              type: "spring",
+              stiffness: 100,
               damping: 15,
-              duration: 0.8 
+              duration: 0.8,
             }}
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
               ABOUT ME
             </h2>
           </motion.div>
@@ -59,10 +59,10 @@ const About = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="relative mx-auto mb-8"
           >
-            <div className="w-40 h-2 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 mx-auto origin-center rounded-full shadow-lg shadow-purple-500/50 relative overflow-hidden">
+            <div className="w-40 h-2 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 mx-auto origin-center rounded-full shadow-lg shadow-blue-500/50 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
             </div>
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-48 h-6 bg-gradient-to-r from-blue-400/20 via-purple-500/30 to-indigo-600/20 blur-lg rounded-full" />
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-48 h-6 bg-gradient-to-r from-blue-400/20 via-blue-600/30 to-blue-800/20 blur-lg rounded-full" />
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -72,7 +72,6 @@ const About = () => {
             />
           </motion.div>
         </div>
-
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left text */}
@@ -130,9 +129,7 @@ const About = () => {
                       <h4 className="font-medium text-white mb-2">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-gray-400">
-                        {item.description}
-                      </p>
+                      <p className="text-sm text-gray-400">{item.description}</p>
                     </div>
                   </motion.div>
                 ))}
