@@ -45,7 +45,7 @@ const Contact = () => {
           }}
           className="text-center mb-16"
         >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
               CONTACT
             </h2>
 
@@ -57,14 +57,14 @@ const Contact = () => {
               transition={{ duration: 1.0, ease: "easeInOut", delay: 0.2 }}
               className="relative mx-auto mb-8"
             >
-              <div className="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 mx-auto origin-center rounded-full shadow-lg shadow-blue-500/50" />
-              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-40 h-5 bg-gradient-to-r from-blue-500/30 via-blue-600/40 to-blue-800/30 blur-md rounded-full" />
+             <div className="w-32 h-1.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 mx-auto origin-center rounded-full shadow-lg shadow-cyan-500/50" />
+             <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-40 h-5 bg-gradient-to-r from-cyan-400/30 via-blue-500/40 to-indigo-600/30 blur-md rounded-full" />
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full shadow-lg shadow-blue-400/80"
+               className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full shadow-lg shadow-blue-400/80"
               />
             </motion.div>
 
