@@ -31,7 +31,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gray-800/30">
+    <section id="contact" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
@@ -45,7 +45,7 @@ const Contact = () => {
           }}
           className="text-center mb-16"
         >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent">
               CONTACT
             </h2>
 
@@ -54,17 +54,19 @@ const Contact = () => {
               initial={{ scaleX: 0, opacity: 0 }}
               whileInView={{ scaleX: 1, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 1.0, ease: "easeInOut", delay: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
               className="relative mx-auto mb-8"
             >
-             <div className="w-32 h-1.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 mx-auto origin-center rounded-full shadow-lg shadow-cyan-500/50" />
-             <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-40 h-5 bg-gradient-to-r from-cyan-400/30 via-blue-500/40 to-indigo-600/30 blur-md rounded-full" />
+              <div className="w-40 h-2 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 mx-auto origin-center rounded-full shadow-lg shadow-purple-500/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
+              </div>
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-48 h-6 bg-gradient-to-r from-blue-400/20 via-purple-500/30 to-indigo-600/20 blur-lg rounded-full" />
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-               className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full shadow-lg shadow-blue-400/80"
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse"
               />
             </motion.div>
 
