@@ -20,7 +20,7 @@ const About = () => {
       icon: <Users className="text-green-400" size={24} />,
       title: "Event Management",
       description:
-        "Experienced in organizing and coordinating large-scale events",
+        "Experienced ina organizing and coordinating large-scale events",
     },
     {
       icon: <Trophy className="text-yellow-400" size={24} />,
