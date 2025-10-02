@@ -33,12 +33,11 @@ const About = () => {
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Title */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: -30, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             transition={{
               type: "spring",
               stiffness: 100,
@@ -46,42 +45,32 @@ const About = () => {
               duration: 0.8,
             }}
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent">
-              ABOUT ME
+            <h2 className="section-title">
+              About Me
             </h2>
           </motion.div>
 
-          {/* Elegant animated underline */}
           <motion.div
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
             viewport={{ once: false, amount: 0.1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="relative mx-auto mb-8"
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
+            className="section-underline"
           >
-            <div className="w-48 h-1 bg-gradient-to-r from-slate-300 via-white to-slate-400 mx-auto origin-center relative overflow-hidden">
-              {/* Main line with rounded ends */}
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-300 via-white to-slate-400 rounded-full"></div>
-              
-              {/* Animated shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shine rounded-full"></div>
-              
-              {/* Side decorative elements */}
-              <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse"></div>
-              <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse"></div>
+            <div className="underline-main">
+              <div className="underline-shine"></div>
+              <div className="underline-dot-left"></div>
+              <div className="underline-dot-right"></div>
             </div>
-            
-            {/* Glow effect */}
-            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-52 h-5 bg-gradient-to-r from-slate-300/20 via-white/40 to-slate-400/20 blur-lg rounded-full" />
+            <div className="underline-glow" />
           </motion.div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="space-y-6">
@@ -105,11 +94,10 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Right card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-700/30 p-8 rounded-2xl backdrop-blur-sm border border-gray-700/50">
@@ -122,7 +110,7 @@ const About = () => {
                     key={index}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: false, amount: 0.1 }}
                     transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   >
                     <div className="text-center group">

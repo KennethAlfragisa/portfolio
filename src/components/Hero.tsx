@@ -37,7 +37,7 @@ const Hero = () => {
 
       {/* Animated background elements */}
       <motion.div 
-        className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"
+        className="hero-bg-element-1"
         animate={{ 
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.6, 0.3],
@@ -51,7 +51,7 @@ const Hero = () => {
         }}
       />
       <motion.div 
-        className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+        className="hero-bg-element-2"
         animate={{ 
           scale: [1.2, 1, 1.2],
           opacity: [0.6, 0.3, 0.6],
@@ -68,7 +68,7 @@ const Hero = () => {
       
       {/* Additional floating elements */}
       <motion.div 
-        className="absolute top-1/3 right-1/4 w-32 h-32 bg-blue-400/5 rounded-full blur-2xl"
+        className="hero-floating-element"
         animate={{ 
           scale: [1, 1.5, 1],
           opacity: [0.2, 0.5, 0.2],
@@ -85,15 +85,12 @@ const Hero = () => {
       {[...Array(12)].map((_, i) => (
         <motion.div
           key={i}
-          className={`absolute rounded-full ${
+          className={`hero-particle ${
             i % 3 === 0 ? 'w-1 h-1 bg-blue-400/40' : 
             i % 3 === 1 ? 'w-2 h-2 bg-purple-400/30' : 
             'w-1.5 h-1.5 bg-blue-300/35'
           }`}
-          style={{
-            left: `${10 + (i * 8)}%`,
-            top: `${20 + (i * 6)}%`,
-          }}
+          className={`hero-particle-${i}`}
           animate={{
             y: [-30, 30, -30],
             x: [-10, 10, -10],
@@ -220,11 +217,7 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <motion.div 
-                  className="profile-wrapper w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] 
-                                rounded-full overflow-hidden border-4 
-                                border-gradient-to-r from-blue-500 to-purple-500 p-1 
-                                bg-gradient-to-r from-blue-500 to-purple-500 
-                                transition-transform duration-500 cursor-pointer group"
+                  className="profile-wrapper"
                   whileHover={{ scale: 1.05 }}
                   animate={{ 
                     boxShadow: [
@@ -243,14 +236,9 @@ const Hero = () => {
                     <img
                       src={profileImg}
                       alt="Profile"
-                      className="w-full h-full object-cover"
-                      style={{
-                        objectPosition: "center",
-                        transform: "scale(1.9)", 
-                      }}
+                      className="profile-image"
                     />
-                    {/* Hover pulse overlay */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-300" />
+                    <div className="profile-hover-overlay" />
                   </div>
                 </motion.div>
               </div>
@@ -275,82 +263,6 @@ const Hero = () => {
         </button>
       </motion.div>
 
-      {/* Custom styles */}
-      <style>{`
-        .outline-animated {
-          border: 2px solid transparent;
-          background-clip: padding-box;
-          position: relative;
-          z-index: 1;
-        }
-        .outline-animated::before {
-          content: "";
-          position: absolute;
-          inset: -2px;
-          border-radius: inherit;
-          padding: 2px;
-          background: linear-gradient(270deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
-          background-size: 600% 600%;
-          animation: borderGradient 8s ease infinite;
-          -webkit-mask: 
-            linear-gradient(#fff 0 0) content-box, 
-            linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor;
-                  mask-composite: exclude;
-          z-index: -1;
-        }
-        @keyframes borderGradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .shimmer {
-          position: relative;
-          display: inline-block;
-          background: linear-gradient(
-            120deg,
-            #ffffff 0%,
-            #dbeafe 40%,
-            #e9d5ff 60%,
-            #ffffff 100%
-          );
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmerMove 3s linear infinite;
-        }
-        @keyframes shimmerMove {
-          0% { background-position: -200% center; }
-          100% { background-position: 200% center; }
-        }
-        .shiny-text {
-          background-image: linear-gradient(
-            120deg,
-            #ffffff 0%,
-            #dbeafe 40%,
-            #e9d5ff 60%,
-            #ffffff 100%
-          );
-          background-size: 200% 100%;
-          color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-          animation: shimmerMove 3s ease-in-out infinite;
-        }
-        @keyframes zoomPulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-        }
-
-        /* Pulse aktif di wrapper & overlay agar sinkron */
-        .group:hover .profile-wrapper,
-        .group:hover .overlay {
-          animation: zoomPulse 1.5s ease-in-out infinite;
-        }
-
-
-
-      `}</style>
     </section>
   );
 };

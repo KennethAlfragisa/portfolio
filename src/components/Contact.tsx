@@ -45,29 +45,23 @@ const Contact = () => {
           }}
           className="text-center mb-16"
         >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent">
-              CONTACT
+            <h2 className="section-title">
+              Contact
             </h2>
 
-            {/* Elegant animated underline */}
             <motion.div
               initial={{ scaleX: 0, opacity: 0 }}
               whileInView={{ scaleX: 1, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="relative mx-auto mb-8"
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
+              className="section-underline"
             >
-              <div className="w-40 h-2 bg-gradient-to-r from-slate-300 via-white to-slate-400 mx-auto origin-center rounded-full shadow-lg shadow-white/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
+              <div className="underline-main">
+                <div className="underline-shine"></div>
+                <div className="underline-dot-left"></div>
+                <div className="underline-dot-right"></div>
               </div>
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-48 h-6 bg-gradient-to-r from-slate-300/20 via-white/30 to-slate-400/20 blur-lg rounded-full" />
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse"
-              />
+              <div className="underline-glow" />
             </motion.div>
 
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
@@ -144,13 +138,6 @@ const Contact = () => {
                   </motion.div>
                 ))}
               </div>
-            </div>
-            <div className="w-48 h-1 bg-gradient-to-r from-slate-300 via-white to-slate-400 mx-auto origin-center relative overflow-hidden">
-              {/* Main line with rounded ends */}
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-300 via-white to-slate-400 rounded-full"></div>
-            
-            {/* Glow effect */}
-            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-52 h-5 bg-gradient-to-r from-slate-300/20 via-white/40 to-slate-400/20 blur-lg rounded-full" />
             </div>
           </motion.div>
         </div>
