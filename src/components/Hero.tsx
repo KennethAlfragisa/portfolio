@@ -218,13 +218,13 @@ const Hero = () => {
             className="order-1 lg:order-2"
           >
             <div className="flex justify-center lg:justify-end">
-              <div className="relative group">
+              <div className="relative">
                 <motion.div 
                   className="profile-wrapper w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] 
                                 rounded-full overflow-hidden border-4 
                                 border-gradient-to-r from-blue-500 to-purple-500 p-1 
                                 bg-gradient-to-r from-blue-500 to-purple-500 
-                                transition-transform duration-500"
+                                transition-transform duration-500 group cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   animate={{ 
                     boxShadow: [

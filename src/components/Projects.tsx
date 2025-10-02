@@ -100,7 +100,7 @@ const Projects = () => {
           transition={{ type: "spring", stiffness: 70, damping: 15 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent">
             PROJECTS
           </h2>
           
@@ -111,10 +111,10 @@ const Projects = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="relative mx-auto mb-8"
           >
-            <div className="w-40 h-2 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 mx-auto origin-center rounded-full shadow-lg shadow-purple-500/50 relative overflow-hidden">
+            <div className="w-40 h-2 bg-gradient-to-r from-slate-300 via-white to-slate-400 mx-auto origin-center rounded-full shadow-lg shadow-white/50 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
             </div>
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-48 h-6 bg-gradient-to-r from-blue-400/20 via-purple-500/30 to-indigo-600/20 blur-lg rounded-full" />
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-48 h-6 bg-gradient-to-r from-slate-300/20 via-white/30 to-slate-400/20 blur-lg rounded-full" />
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
