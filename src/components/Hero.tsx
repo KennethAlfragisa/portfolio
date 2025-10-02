@@ -209,6 +209,8 @@ const Hero = () => {
               type: "spring", 
                 <motion.div
                   className="profile-wrapper"
+            }
+            }
             className="order-1 lg:order-2"
           >
             <div className="flex justify-center lg:justify-end">
@@ -259,6 +261,7 @@ const Hero = () => {
       </motion.div>
 
     </section>
+  )
   );
 };
 
