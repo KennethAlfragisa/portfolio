@@ -81,13 +81,13 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           >
             <div className="space-y-8 text-center">
               <div>
                 <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-                  Whether you're interested in collaboration, have questions about my learning journey, 
+                  Whether you're interested in collaboration, have questions about my experience, 
                   or just want to connect, I'd love to hear from you. I typically respond within 24 hours.
                 </p>
               </div>
@@ -144,6 +144,13 @@ const Contact = () => {
                   </motion.div>
                 ))}
               </div>
+            </div>
+            <div className="w-48 h-1 bg-gradient-to-r from-slate-300 via-white to-slate-400 mx-auto origin-center relative overflow-hidden">
+              {/* Main line with rounded ends */}
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-300 via-white to-slate-400 rounded-full"></div>
+            
+            {/* Glow effect */}
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-52 h-5 bg-gradient-to-r from-slate-300/20 via-white/40 to-slate-400/20 blur-lg rounded-full" />
             </div>
           </motion.div>
         </div>
