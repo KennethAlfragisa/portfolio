@@ -1,5 +1,5 @@
 import React from "react";
-import { Code, Gamepad2, Users, Trophy } from "lucide-react";
+import { Code, Gamepad2, Users, Trophy, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
 const About = () => {
