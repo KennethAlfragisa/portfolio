@@ -87,7 +87,7 @@ const Contact = () => {
             <div className="space-y-8 text-center">
               <div>
                 <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-                  Whether you're interested in collaboration, have questions about my experience, 
+                  Whether you're interested in collaboration, have questions about my learning journey, 
                   or just want to connect, I'd love to hear from you. I typically respond within 24 hours.
                 </p>
               </div>

@@ -224,7 +224,7 @@ const Hero = () => {
                                 rounded-full overflow-hidden border-4 
                                 border-gradient-to-r from-blue-500 to-purple-500 p-1 
                                 bg-gradient-to-r from-blue-500 to-purple-500 
-                                transition-transform duration-500 group cursor-pointer"
+                                transition-transform duration-500 cursor-pointer group"
                   whileHover={{ scale: 1.05 }}
                   animate={{ 
                     boxShadow: [
@@ -249,15 +249,10 @@ const Hero = () => {
                         transform: "scale(1.9)", 
                       }}
                     />
+                    {/* Hover pulse overlay */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-300" />
                   </div>
                 </motion.div>
-
-                <motion.div 
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
               </div>
             </div>
           </motion.div>

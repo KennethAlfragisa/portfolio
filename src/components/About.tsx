@@ -8,25 +8,25 @@ const About = () => {
       icon: <Code className="text-blue-400" size={24} />,
       title: "Development",
       description:
-        "Skilled in multiple programming languages including C and Groovy",
+        "Learning multiple programming languages including C, PHP, and JavaScript",
     },
     {
-      icon: <Gamepad2 className="text-purple-400" size={24} />,
-      title: "Gaming Industry",
+      icon: <Users className="text-purple-400" size={24} />,
+      title: "Teamwork",
       description:
-        "Streaming Manager at Binusian Gaming with expertise in content creation",
+        "Collaborative team player with experience in group projects and organizations",
     },
     {
-      icon: <Users className="text-green-400" size={24} />,
+      icon: <Calendar className="text-green-400" size={24} />,
       title: "Event Management",
       description:
-        "Experienced ina organizing and coordinating large-scale events",
+        "Gaining experience in organizing and coordinating events",
     },
     {
       icon: <Trophy className="text-yellow-400" size={24} />,
       title: "Quality Assurance",
       description:
-        "Certified QA professional with hands-on internship experience",
+        "Learning QA processes through internship and practical experience",
     },
   ];
 
@@ -55,21 +55,24 @@ const About = () => {
           <motion.div
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             className="relative mx-auto mb-8"
           >
-            <div className="w-40 h-2 bg-gradient-to-r from-slate-300 via-white to-slate-400 mx-auto origin-center rounded-full shadow-lg shadow-white/50 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
+            <div className="w-48 h-1 bg-gradient-to-r from-slate-300 via-white to-slate-400 mx-auto origin-center relative overflow-hidden">
+              {/* Main line with rounded ends */}
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-300 via-white to-slate-400 rounded-full"></div>
+              
+              {/* Animated shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shine rounded-full"></div>
+              
+              {/* Side decorative elements */}
+              <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse"></div>
+              <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse"></div>
             </div>
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-48 h-6 bg-gradient-to-r from-slate-300/20 via-white/30 to-slate-400/20 blur-lg rounded-full" />
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse"
-            />
+            
+            {/* Glow effect */}
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-52 h-5 bg-gradient-to-r from-slate-300/20 via-white/40 to-slate-400/20 blur-lg rounded-full" />
           </motion.div>
         </div>
 
@@ -84,20 +87,20 @@ const About = () => {
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
                 I'm a passionate Computer Science student at BINUS University,
-                currently in my third year. My journey in technology spans
-                across multiple domains - from quality assurance and software
-                development to gaming and event management.
+                currently in my third year. I'm exploring various aspects of technology
+                including software development, quality assurance, and event coordination
+                to build a strong foundation for my career.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                With hands-on experience in various roles including QA
-                internships, streaming management, and event coordination, I
-                bring a unique blend of technical expertise and creative
-                problem-solving skills to every project I undertake.
+                Through internships, organizational involvement, and academic projects,
+                I'm developing both technical skills and soft skills. I enjoy
+                problem-solving and am always eager to learn new technologies
+                and methodologies.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm also actively involved in university organizations, serving
-                as a Media and Communications activist and contributing to the
-                gaming community through my role at Binusian Gaming.
+                I'm actively involved in university organizations and always
+                looking for opportunities to grow, collaborate, and contribute
+                to meaningful projects while continuing to develop my skills.
               </p>
             </div>
           </motion.div>
