@@ -22,36 +22,6 @@ html, body {
   margin-right: auto;
 }
 
-/* Section Titles */
-.section-title {
-  @apply text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent;
-}
-
-/* Section Underlines */
-.section-underline {
-  @apply relative mx-auto mb-8;
-}
-
-.underline-main {
-  @apply w-48 h-1 bg-gradient-to-r from-slate-300 via-white to-slate-400 mx-auto origin-center relative overflow-hidden rounded-full;
-}
-
-.underline-shine {
-  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shine rounded-full;
-}
-
-.underline-dot-left {
-  @apply absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse;
-}
-
-.underline-dot-right {
-  @apply absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse;
-}
-
-.underline-glow {
-  @apply absolute -top-2 left-1/2 transform -translate-x-1/2 w-52 h-5 bg-gradient-to-r from-slate-300/20 via-white/40 to-slate-400/20 blur-lg rounded-full;
-}
-
 /* Hero Section Styles */
 .hero-bg-element-1 {
   @apply absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl;

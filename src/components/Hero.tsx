@@ -207,11 +207,8 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
               type: "spring", 
-              stiffness: 80, 
-              damping: 15,
-              duration: 1.2,
-              delay: 0.6 
-            }}
+                <motion.div
+                  className="profile-wrapper"
             className="order-1 lg:order-2"
           >
             <div className="flex justify-center lg:justify-end">
@@ -232,12 +229,10 @@ const Hero = () => {
                     rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
                   }}
                 >
-                  <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 relative">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 relative group">
                     <img
                       src={profileImg}
                       alt="Profile"
-                      className="profile-image"
-                    />
                     <div className="profile-hover-overlay" />
                   </div>
                 </motion.div>
