@@ -105,7 +105,6 @@ const Experience = () => {
 
                 <p className="text-gray-300 leading-relaxed">{exp.description}</p>
                 
-                {/* Skills */}
                 <div className="mt-4">
                   <h4 className="text-sm font-semibold text-blue-400 mb-2">Skills & Technologies:</h4>
                   <div className="flex flex-wrap gap-2">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png'; // import logo
+import logo from '../assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +11,6 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Check if we're at the top of the page
       if (window.scrollY < 200) {
         setActiveSection('');
         return;
@@ -79,11 +78,9 @@ const Header = () => {
       <nav className="w-full px-4 sm:px-6 lg:px-8 xl:px-60">
         <div className="flex justify-between items-center py-4">
           {/* Logo bisa diklik */}
-          <button onClick={scrollToTop} className="focus:outline-none">
             <img src={logo} alt="Logo" className="h-[30px] w-auto" />
           </button>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex space-x-4 xl:space-x-8">
             {navItems.map((item) => {
               const isActive = activeSection === item.href;
@@ -109,7 +106,6 @@ const Header = () => {
             })}
           </div>
 
-          {/* Mobile menu button */}
           <button
             className="lg:hidden text-white hover:text-blue-400 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -118,7 +114,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden bg-gray-800/95 backdrop-blur-sm rounded-lg mt-2 py-4 mx-4">
             {navItems.map((item) => (

@@ -31,11 +31,9 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-16 pb-20">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
 
-      {/* Animated background elements */}
       <motion.div 
         className="hero-bg-element-1"
         animate={{ 
@@ -66,7 +64,6 @@ const Hero = () => {
         }}
       />
       
-      {/* Additional floating elements */}
       <motion.div 
         className="hero-floating-element"
         animate={{ 
@@ -81,7 +78,6 @@ const Hero = () => {
         }}
       />
 
-      {/* Floating particles */}
       {[...Array(12)].map((_, i) => (
         <motion.div
           key={i}
@@ -106,10 +102,8 @@ const Hero = () => {
       ))}
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 flex-1 flex items-center">
-        {/* Grid 2 kolom */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full max-w-none">
           
-          {/* Text Content */}
 <div className="flex flex-col text-center lg:text-left order-2 lg:order-1 px-0 lg:pl-8">
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -147,7 +141,6 @@ const Hero = () => {
               </p>
             </motion.div>
 
-            {/* Buttons CV & Portfolio */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -177,7 +170,6 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Social Icons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -200,7 +192,6 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Profile Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -252,7 +243,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator - moved outside and positioned absolutely */}
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
         initial={{ opacity: 0, y: 20 }}

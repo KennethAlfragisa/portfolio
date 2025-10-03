@@ -19,7 +19,6 @@ function App() {
         <Projects />
         <Skills />
         <Experience />
-        {/* <Education /> */}
         <Contact />
       </main>
       <Footer />

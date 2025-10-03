@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -57,7 +56,6 @@ export default {
         "spin-slow": "spin-slow 3s linear infinite",
         "typewriter": "typewriter 2s steps(20) infinite alternate",
         "shine": "shine 1.5s ease-in-out",
-        "scroll-indicator": "scroll-indicator 2s ease-in-out infinite",
         "growX": "growX 1s ease-out forwards",
       },
     },

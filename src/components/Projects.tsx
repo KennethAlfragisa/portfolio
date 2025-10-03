@@ -48,7 +48,6 @@ const projects = [
   },
 ];
 
-// Variants
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -92,7 +91,6 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 px-4 bg-gray-800/30">
       <div className="max-w-6xl mx-auto">
-        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +118,6 @@ const Projects = () => {
           </motion.div>
         </motion.div>
 
-        {/* Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -132,9 +129,7 @@ const Projects = () => {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-700"
-            >
-              {/* Image + Hover overlay */}
+              className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-700">
               <motion.div className="relative h-56 overflow-hidden group">
                 <img
                   src={project.image}
@@ -163,7 +158,6 @@ const Projects = () => {
                 </div>
               </motion.div>
 
-              {/* Content */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {project.title}
@@ -178,7 +172,6 @@ const Projects = () => {
         </motion.div>
       </div>
 
-      {/* Modal */}
       {selected && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6">
           <div className="bg-gray-900 text-white rounded-2xl max-w-3xl w-full p-6 relative shadow-xl">
@@ -192,7 +185,6 @@ const Projects = () => {
             <h3 className="text-3xl font-bold mb-2">{selected.title}</h3>
             <p className="text-gray-400 mb-6">{selected.description}</p>
 
-            {/* Slider */}
             <div className="relative flex items-center justify-center">
               <button
                 onClick={handlePrev}
@@ -215,7 +207,6 @@ const Projects = () => {
               </button>
             </div>
 
-            {/* Dots */}
             <div className="flex justify-center mt-4 gap-2">
               {selected.gallery.map((_: string, idx: number) => (
                 <button

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Prevent horizontal scroll */
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -10,19 +9,12 @@ html, body {
   position: relative;
 }
 
-* {
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-/* Prevent any element from causing horizontal scroll */
 .container, .max-w-7xl, .max-w-6xl, .max-w-4xl {
   max-width: min(80rem, calc(100vw - 2rem));
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Hero Section Styles */
 .hero-bg-element-1 {
   @apply absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl;
 }
@@ -85,7 +77,6 @@ html, body {
   }
 }
 
-/* Button Styles */
 .outline-animated {
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -141,7 +132,6 @@ html, body {
   animation: shimmerMove 3s ease-in-out infinite;
 }
 
-/* Grid Background */
 .grid-background {
   background-image: 
     linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
@@ -150,7 +140,6 @@ html, body {
   animation: grid-move 20s linear infinite;
 }
 
-/* Animations */
 @keyframes grid-move {
   0% { transform: translate(0, 0); }
   100% { transform: translate(50px, 50px); }
@@ -167,7 +156,6 @@ html, body {
   100% { background-position: 200% center; }
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -185,18 +173,15 @@ html, body {
   background: linear-gradient(to bottom, #2563eb, #7c3aed);
 }
 
-/* Selection Styling */
 ::selection {
   background: rgba(59, 130, 246, 0.3);
   color: white;
 }
 
-/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Mobile responsive fixes */
 @media (max-width: 768px) {
   .container {
     padding-left: 1rem;
@@ -238,19 +223,5 @@ html {
   .text-3xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  [class*="lg:ml-[-"], [class*="lg:mr-[-"] {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:px-0 {
-    padding-left: 0;
-    padding-right: 0;
   }
 }

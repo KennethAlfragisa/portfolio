@@ -9,7 +9,6 @@ import {
   Gamepad2,
 } from "lucide-react";
 
-// Skill kategori (deskripsi singkat)
 const skillCategories = [
   {
     category: "Programming & Development",
@@ -45,7 +44,6 @@ const skillCategories = [
   },
 ];
 
-// Skill individual
 const individualSkills = [
   { name: "C", description: "Foundational programming language.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" className="w-8 h-8" alt="C" /> },
   { name: "HTML & CSS", description: "Building clean and functional websites.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" className="w-8 h-8" alt="HTML" /> },
@@ -62,7 +60,6 @@ const individualSkills = [
   { name: "GitHub", description: "Version control and collaboration platform.", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" className="w-8 h-8" alt="GitHub" /> },
 ];
 
-// Variants
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -89,7 +86,6 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -122,7 +118,6 @@ const Skills = () => {
           </motion.div>
         </motion.div>
 
-        {/* Category Skills */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -148,7 +143,6 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        {/* Garis Pemisah */}
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 1 }}
@@ -158,7 +152,6 @@ const Skills = () => {
                      from-transparent via-blue-400 to-transparent origin-center"
         />
 
-        {/* Individual Skills */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
