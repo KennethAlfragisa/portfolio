@@ -103,7 +103,7 @@ const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent">
             PROJECTS
           </h2>
-          
+
           <motion.div
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
@@ -118,6 +118,7 @@ const Projects = () => {
             </div>
             <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-52 h-5 bg-gradient-to-r from-slate-300/20 via-white/40 to-slate-400/20 blur-lg rounded-full" />
           </motion.div>
+        </motion.div>
 
         {/* Projects Grid */}
         <motion.div
