@@ -262,6 +262,7 @@ const Hero = () => {
 
     </section>
   )
+  )
   );
 };
 
