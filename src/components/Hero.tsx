@@ -233,8 +233,9 @@ const Hero = () => {
                   <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 relative group">
                     <img
                       src={profileImg}
-                      alt="Profile"
+                      className="profile-image"
                     />
+                    <div className="profile-hover-overlay" />
                     <div className="profile-hover-overlay" />
                   </div>
                 </motion.div>
