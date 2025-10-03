@@ -110,7 +110,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full max-w-none">
           
           {/* Text Content */}
-          <div className="flex flex-col text-center lg:text-left order-2 lg:order-1 px-4 lg:px-0">
+<div className="flex flex-col text-center lg:text-left order-2 lg:order-1 px-0 lg:pl-8">
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
