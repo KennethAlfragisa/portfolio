@@ -216,7 +216,14 @@ const Hero = () => {
               <div className="relative">
                 <motion.div 
                   className="profile-wrapper group"
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: [
+                      "0 0 20px rgba(59, 130, 246, 0.6)",
+                      "0 0 40px rgba(139, 92, 246, 0.8)",
+                      "0 0 60px rgba(59, 130, 246, 0.6)"
+                    ]
+                  }}
                   animate={{ 
                     boxShadow: [
                       "0 0 20px rgba(59, 130, 246, 0.3)",
@@ -227,7 +234,8 @@ const Hero = () => {
                   }}
                   transition={{ 
                     boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                    rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+                    rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+                    scale: { duration: 0.3, ease: "easeOut" }
                   }}
                 >
                   <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 relative group">

@@ -67,7 +67,20 @@ html, body {
 
 .profile-hover-overlay {
   @apply absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 
-         opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-300;
+         opacity-0 group-hover:opacity-100 transition-all duration-300;
+}
+
+.profile-wrapper:hover {
+  animation: profile-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes profile-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 80px rgba(139, 92, 246, 0.6);
+  }
 }
 
 /* Button Styles */
