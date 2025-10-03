@@ -89,8 +89,7 @@ const Hero = () => {
             i % 3 === 0 ? 'w-1 h-1 bg-blue-400/40' : 
             i % 3 === 1 ? 'w-2 h-2 bg-purple-400/30' : 
             'w-1.5 h-1.5 bg-blue-300/35'
-          }`}
-          className={`hero-particle-${i}`}
+          } hero-particle-${i}`}
           animate={{
             y: [-30, 30, -30],
             x: [-10, 10, -10],
@@ -235,8 +234,8 @@ const Hero = () => {
                     <img
                       src={profileImg}
                       alt="Profile"
-                    <div className="profile-hover-overlay" />
                     />
+                    <div className="profile-hover-overlay" />
                   </div>
                 </motion.div>
               </div>
@@ -262,8 +261,6 @@ const Hero = () => {
       </motion.div>
 
     </section>
-  )
-  )
   );
 };
 
