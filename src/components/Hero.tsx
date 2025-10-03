@@ -207,16 +207,16 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
               type: "spring", 
-                <motion.div
-                  className="profile-wrapper"
-            }
-            }
+              stiffness: 80, 
+              damping: 15,
+              duration: 1.2 
+            }}
             className="order-1 lg:order-2"
           >
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <motion.div 
-                  className="profile-wrapper"
+                  className="profile-wrapper group"
                   whileHover={{ scale: 1.05 }}
                   animate={{ 
                     boxShadow: [
@@ -236,6 +236,7 @@ const Hero = () => {
                       src={profileImg}
                       alt="Profile"
                     <div className="profile-hover-overlay" />
+                    />
                   </div>
                 </motion.div>
               </div>

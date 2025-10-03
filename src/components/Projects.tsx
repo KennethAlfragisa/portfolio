@@ -117,9 +117,7 @@ const Projects = () => {
               <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg shadow-white/80 animate-pulse"></div>
             </div>
             <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-52 h-5 bg-gradient-to-r from-slate-300/20 via-white/40 to-slate-400/20 blur-lg rounded-full" />
-            </div>
           </motion.div>
-        </motion.div>
 
         {/* Projects Grid */}
         <motion.div
