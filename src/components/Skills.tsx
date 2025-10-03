@@ -103,7 +103,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent">
-            SKILLS
+            Skills
           </h2>
 
           <motion.div
