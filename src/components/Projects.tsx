@@ -98,9 +98,9 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ type: "spring", stiffness: 70, damping: 15 }}
-          className="text-center mb-16"
+          className="text-center mb-16 overflow-visible"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent leading-tight">
             Projects
           </h2>
 

@@ -155,7 +155,7 @@ const Skills = () => {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="relative w-full h-[2px] mb-16 bg-gradient-to-r 
-                     from-transparent via-purple-400 to-transparent origin-center"
+                     from-transparent via-blue-400 to-transparent origin-center"
         />
 
         {/* Individual Skills */}
